@@ -1,0 +1,27 @@
+@startuml Sist_Notificaciones
+interface Notificacion {
+    +enviar(mensaje: String)
+}
+
+class NotificacionEmail {
+    +enviar(mensaje: String)
+}
+
+class NotificacionSMS {
+    +enviar(mensaje: String)
+}
+
+class NotificacionPush {
+    +enviar(mensaje: String)
+}
+
+class FabricaNotificaciones {
+    +crear_notificacion(tipo: String): Notificacion
+}
+
+Notificacion <|.. NotificacionEmail
+Notificacion <|.. NotificacionSMS
+Notificacion <|.. NotificacionPush
+
+FabricaNotificaciones ..> Notificacion : crea
+@enduml
