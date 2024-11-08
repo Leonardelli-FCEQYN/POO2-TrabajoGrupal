@@ -1,5 +1,7 @@
 package modelo;
-
+/**
+ * Interfaz que define el comportamiento de un canal de notificación.
+ */
 public interface Notificacion {
      /**
      * Envía un mensaje a través del canal de notificación.
