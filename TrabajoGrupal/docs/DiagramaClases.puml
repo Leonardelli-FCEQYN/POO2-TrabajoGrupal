@@ -1,18 +1,18 @@
 @startuml Sist_Notificaciones
 interface Notificacion {
-    +enviar(mensaje: String)
+    +enviar(mensaje: String): void
 }
 
 class NotificacionEmail {
-    +enviar(mensaje: String)
+    +enviar(mensaje: String): void
 }
 
 class NotificacionSMS {
-    +enviar(mensaje: String)
+    +enviar(mensaje: String): void
 }
 
 class NotificacionPush {
-    +enviar(mensaje: String)
+    +enviar(mensaje: String): void
 }
 
 class FabricaNotificaciones {
@@ -24,4 +24,5 @@ Notificacion <|.. NotificacionSMS
 Notificacion <|.. NotificacionPush
 
 FabricaNotificaciones ..> Notificacion : crea
+
 @enduml
